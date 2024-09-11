@@ -8,8 +8,10 @@ package nom.Login;
  *
  * @author HUAWEI
  */
+import java.awt.Color;
 public class Login1 extends javax.swing.JFrame {
 
+    int xMouse, yMouse;
     /**
      * Creates new form Login1
      */
@@ -42,11 +44,17 @@ public class Login1 extends javax.swing.JFrame {
         passLabel = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
         exitTxt = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitTxt1 = new javax.swing.JLabel();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nom/Imagenes/car.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,7 +70,7 @@ public class Login1 extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nom/Imagenes/car.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 342, 690));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 342, 700));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nom/Imagenes/iconoCar.png"))); // NOI18N
@@ -73,7 +81,7 @@ public class Login1 extends javax.swing.JFrame {
         title.setText("INICIAR SESIÓN");
         jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        loginBtn.setBackground(new java.awt.Color(0, 134, 190));
+        loginBtn.setBackground(new java.awt.Color(198, 12, 13));
 
         loginBtnTxt1.setFont(new java.awt.Font("Roboto Condensed", 1, 14)); // NOI18N
         loginBtnTxt1.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,7 +115,7 @@ public class Login1 extends javax.swing.JFrame {
                 .addComponent(loginBtnTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
+        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 130, 40));
 
         passTxt.setBackground(new java.awt.Color(204, 204, 204));
         passTxt.setForeground(new java.awt.Color(51, 51, 51));
@@ -164,6 +172,63 @@ public class Login1 extends javax.swing.JFrame {
         });
         jPanel1.add(exitTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        header.setBackground(new java.awt.Color(204, 204, 204));
+        header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerMouseDragged(evt);
+            }
+        });
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerMousePressed(evt);
+            }
+        });
+
+        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+
+        exitTxt1.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        exitTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt1.setText("X");
+        exitTxt1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        exitTxt1.setPreferredSize(new java.awt.Dimension(40, 40));
+        exitTxt1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitTxt1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitTxt1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitTxt1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
+        exitBtn.setLayout(exitBtnLayout);
+        exitBtnLayout.setHorizontalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exitBtnLayout.setVerticalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1010, Short.MAX_VALUE))
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,7 +237,7 @@ public class Login1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -183,11 +248,11 @@ public class Login1 extends javax.swing.JFrame {
     }//GEN-LAST:event_loginBtnTxt1MouseClicked
 
     private void loginBtnTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxt1MouseEntered
-        loginBtn.setBackground(new Color(0, 156, 223));
+        loginBtn.setBackground(new Color(193, 88, 85));
     }//GEN-LAST:event_loginBtnTxt1MouseEntered
 
     private void loginBtnTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxt1MouseExited
-        loginBtn.setBackground(new Color(0,134,190));
+        loginBtn.setBackground(new Color(198, 12, 13));
     }//GEN-LAST:event_loginBtnTxt1MouseExited
 
     private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed
@@ -226,6 +291,31 @@ public class Login1 extends javax.swing.JFrame {
         exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
 
+    private void exitTxt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitTxt1MouseClicked
+
+    private void exitTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseEntered
+        exitBtn.setBackground(Color.red);
+        exitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_exitTxt1MouseEntered
+
+    private void exitTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseExited
+        exitBtn.setBackground(Color.white);
+        exitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_exitTxt1MouseExited
+
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerMouseDragged
+
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -262,7 +352,10 @@ public class Login1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
+    private javax.swing.JLabel exitTxt1;
+    private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
