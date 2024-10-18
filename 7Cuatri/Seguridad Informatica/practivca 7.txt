@@ -1,0 +1,7 @@
+FileName | NWclients.txt | Hash| dd88482282785192d4a4ad4f8e32b3b6    dd88482282785192d4a4ad4f8e32b3b6
+FileName | SWclients.txt | Hash| c202036c9210959e7b587b08f080c378   c202036c9210959e7b587b08f080c378      
+FileName | NEclients.txt | Hash| 6c8fb699ac2ced0b5c9ea40aab9f8caf   6c8fb699ac2ced0b5c9ea40aab9f8caf
+FileName | SEclients.txt | Hash| 48d7eceee217e83cd685b537a3066b2f   99d4c9281993ff4fe4b8e92022224015
+FileName | Sclients.txt | Hash| abad7f7606e324f252bfebd6c09810e2    abad7f7606e324f252bfebd6c09810e2 
+FileName | Nclients.txt | Hash| 65f586602d9476b7b561b5d98b2ea23b     65f586602d9476b7b561b5d98b2ea23b
+FileName | income.txt | Hash| 1b319bc7ba0adc63f2af2cafdc59f5279d46dd33  1b319bc7ba0adc63f2af2cafdc59f5279d46dd33
